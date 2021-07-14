@@ -1,4 +1,4 @@
-package com.doney.reflect;
+package com.doney.advanced.reflect;
 
 import java.util.Arrays;
 

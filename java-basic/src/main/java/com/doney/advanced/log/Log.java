@@ -1,4 +1,4 @@
-package com.doney.log;
+package com.doney.advanced.log;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,5 +7,5 @@ import org.slf4j.LoggerFactory;
  * @author ODC-ODL
  */
 public class Log {
-      Logger logger = LoggerFactory.getLogger(Log.class);
+    public static Logger logger = LoggerFactory.getLogger(Log.class);
 }
