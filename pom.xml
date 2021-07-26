@@ -15,6 +15,7 @@
         <module>java-basic</module>
         <module>netty-demo</module>
         <module>springboot-demo</module>
+        <module>sofa-rpc-demo</module>
     </modules>
 
     <groupId>org.example</groupId>
