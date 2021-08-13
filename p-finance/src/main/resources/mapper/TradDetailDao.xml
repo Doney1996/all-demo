@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.doney.dao.TradDetailDao">
+
+    <resultMap id="BaseResultMap" type="com.doney.entity.TradDetail">
+        <!--@Table trad_detail-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="tradId" column="trad_id" jdbcType="INTEGER"/>
+        <result property="fromAccount" column="from_account" jdbcType="INTEGER"/>
+        <result property="toAccount" column="to_account" jdbcType="INTEGER"/>
+        <result property="amount" column="amount" jdbcType="INTEGER"/>
+        <result property="type" column="type" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="BaseResultMap">
+        select
+          id, trad_id, from_account, to_account, amount, type
+        from p_finance.trad_detail
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          id, trad_id, from_account, to_account, amount, type
+        from p_finance.trad_detail
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          id, trad_id, from_account, to_account, amount, type
+        from p_finance.trad_detail
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="tradId != null">
+                and trad_id = #{tradId}
+            </if>
+            <if test="fromAccount != null">
+                and from_account = #{fromAccount}
+            </if>
+            <if test="toAccount != null">
+                and to_account = #{toAccount}
+            </if>
+            <if test="amount != null">
+                and amount = #{amount}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into p_finance.trad_detail(trad_id, from_account, to_account, amount, type)
+        values (#{tradId}, #{fromAccount}, #{toAccount}, #{amount}, #{type})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update p_finance.trad_detail
+        <set>
+            <if test="tradId != null">
+                trad_id = #{tradId},
+            </if>
+            <if test="fromAccount != null">
+                from_account = #{fromAccount},
+            </if>
+            <if test="toAccount != null">
+                to_account = #{toAccount},
+            </if>
+            <if test="amount != null">
+                amount = #{amount},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from p_finance.trad_detail where id = #{id}
+    </delete>
+
+</mapper>

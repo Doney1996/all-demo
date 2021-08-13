@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.doney.dao.AccountDao">
+
+    <resultMap id="BaseResultMap" type="com.doney.entity.Account">
+        <!--@Table account-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="accountName" column="account_name" jdbcType="VARCHAR"/>
+        <result property="accountType" column="account_type" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="BaseResultMap">
+        select
+          id, account_name, account_type
+        from p_finance.account
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          id, account_name, account_type
+        from p_finance.account
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          id, account_name, account_type
+        from p_finance.account
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="accountName != null and accountName != ''">
+                and account_name = #{accountName}
+            </if>
+            <if test="accountType != null">
+                and account_type = #{accountType}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into p_finance.account(account_name, account_type)
+        values (#{accountName}, #{accountType})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update p_finance.account
+        <set>
+            <if test="accountName != null and accountName != ''">
+                account_name = #{accountName},
+            </if>
+            <if test="accountType != null">
+                account_type = #{accountType},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from p_finance.account where id = #{id}
+    </delete>
+
+</mapper>
