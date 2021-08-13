@@ -1,6 +1,0 @@
-spring:
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://114.96.105.111:3306/p_finance
-    username: root
-    password: admin1984

@@ -16,7 +16,6 @@
         <module>netty-demo</module>
         <module>springboot-demo</module>
         <module>sofa-rpc-demo</module>
-        <module>p-finance</module>
     </modules>
 
     <groupId>org.example</groupId>
