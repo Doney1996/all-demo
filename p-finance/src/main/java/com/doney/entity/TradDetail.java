@@ -1,5 +1,9 @@
 package com.doney.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 /**
@@ -8,6 +12,9 @@ import java.io.Serializable;
  * @author makejava
  * @since 2021-08-14 02:35:17
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TradDetail implements Serializable {
     private static final long serialVersionUID = -75174488427752992L;
     
@@ -28,54 +35,5 @@ public class TradDetail implements Serializable {
     * 类型
     */
     private Long type;
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getTradId() {
-        return tradId;
-    }
-
-    public void setTradId(Long tradId) {
-        this.tradId = tradId;
-    }
-
-    public Long getFromAccount() {
-        return fromAccount;
-    }
-
-    public void setFromAccount(Long fromAccount) {
-        this.fromAccount = fromAccount;
-    }
-
-    public Long getToAccount() {
-        return toAccount;
-    }
-
-    public void setToAccount(Long toAccount) {
-        this.toAccount = toAccount;
-    }
-
-    public Long getAmount() {
-        return amount;
-    }
-
-    public void setAmount(Long amount) {
-        this.amount = amount;
-    }
-
-    public Long getType() {
-        return type;
-    }
-
-    public void setType(Long type) {
-        this.type = type;
-    }
 
 }

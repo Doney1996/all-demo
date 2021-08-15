@@ -27,7 +27,7 @@ public class OrganzationServiceImpl implements OrganzationService {
      */
     @Override
     public Organzation queryById(Long id) {
-        return this.organzationDao.queryById(id);
+        return this.organzationDao.selectById(id);
     }
 
     /**
@@ -39,7 +39,7 @@ public class OrganzationServiceImpl implements OrganzationService {
      */
     @Override
     public List<Organzation> queryAllByLimit(int offset, int limit) {
-        return this.organzationDao.queryAllByLimit(offset, limit);
+        return null;
     }
 
     /**
@@ -62,7 +62,7 @@ public class OrganzationServiceImpl implements OrganzationService {
      */
     @Override
     public Organzation update(Organzation organzation) {
-        this.organzationDao.update(organzation);
+        this.organzationDao.update(organzation,null);
         return this.queryById(organzation.getId());
     }
 

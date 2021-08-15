@@ -1,5 +1,9 @@
 package com.doney.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 /**
@@ -8,6 +12,9 @@ import java.io.Serializable;
  * @author makejava
  * @since 2021-08-14 02:35:15
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Organzation implements Serializable {
     private static final long serialVersionUID = -96008197756377718L;
     
@@ -24,38 +31,5 @@ public class Organzation implements Serializable {
     * 单位类型
     */
     private Long classification;
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Long getType() {
-        return type;
-    }
-
-    public void setType(Long type) {
-        this.type = type;
-    }
-
-    public Long getClassification() {
-        return classification;
-    }
-
-    public void setClassification(Long classification) {
-        this.classification = classification;
-    }
 
 }

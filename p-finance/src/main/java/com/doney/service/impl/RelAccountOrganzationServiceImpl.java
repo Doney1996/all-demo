@@ -27,7 +27,7 @@ public class RelAccountOrganzationServiceImpl implements RelAccountOrganzationSe
      */
     @Override
     public RelAccountOrganzation queryById(Long id) {
-        return this.relAccountOrganzationDao.queryById(id);
+        return this.relAccountOrganzationDao.selectById(id);
     }
 
     /**
@@ -39,7 +39,7 @@ public class RelAccountOrganzationServiceImpl implements RelAccountOrganzationSe
      */
     @Override
     public List<RelAccountOrganzation> queryAllByLimit(int offset, int limit) {
-        return this.relAccountOrganzationDao.queryAllByLimit(offset, limit);
+        return null;
     }
 
     /**
@@ -62,7 +62,7 @@ public class RelAccountOrganzationServiceImpl implements RelAccountOrganzationSe
      */
     @Override
     public RelAccountOrganzation update(RelAccountOrganzation relAccountOrganzation) {
-        this.relAccountOrganzationDao.update(relAccountOrganzation);
+        this.relAccountOrganzationDao.update(relAccountOrganzation,null);
         return this.queryById(relAccountOrganzation.getId());
     }
 

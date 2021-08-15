@@ -1,5 +1,9 @@
 package com.doney.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 /**
@@ -8,6 +12,9 @@ import java.io.Serializable;
  * @author makejava
  * @since 2021-08-14 02:35:15
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class RelAccountOrganzation implements Serializable {
     private static final long serialVersionUID = 255087980299983811L;
     
@@ -16,30 +23,4 @@ public class RelAccountOrganzation implements Serializable {
     private Long accountId;
     
     private Long organzationId;
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getAccountId() {
-        return accountId;
-    }
-
-    public void setAccountId(Long accountId) {
-        this.accountId = accountId;
-    }
-
-    public Long getOrganzationId() {
-        return organzationId;
-    }
-
-    public void setOrganzationId(Long organzationId) {
-        this.organzationId = organzationId;
-    }
-
 }

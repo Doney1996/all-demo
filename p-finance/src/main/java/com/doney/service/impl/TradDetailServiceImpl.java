@@ -27,7 +27,7 @@ public class TradDetailServiceImpl implements TradDetailService {
      */
     @Override
     public TradDetail queryById(Long id) {
-        return this.tradDetailDao.queryById(id);
+        return this.tradDetailDao.selectById(id);
     }
 
     /**
@@ -39,7 +39,7 @@ public class TradDetailServiceImpl implements TradDetailService {
      */
     @Override
     public List<TradDetail> queryAllByLimit(int offset, int limit) {
-        return this.tradDetailDao.queryAllByLimit(offset, limit);
+        return null;
     }
 
     /**
@@ -62,7 +62,7 @@ public class TradDetailServiceImpl implements TradDetailService {
      */
     @Override
     public TradDetail update(TradDetail tradDetail) {
-        this.tradDetailDao.update(tradDetail);
+        this.tradDetailDao.update(tradDetail,null);
         return this.queryById(tradDetail.getId());
     }
 

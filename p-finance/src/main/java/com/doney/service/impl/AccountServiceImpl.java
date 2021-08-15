@@ -27,7 +27,7 @@ public class AccountServiceImpl implements AccountService {
      */
     @Override
     public Account queryById(Long id) {
-        return this.accountDao.queryById(id);
+        return this.accountDao.selectById(id);
     }
 
     /**
@@ -39,7 +39,7 @@ public class AccountServiceImpl implements AccountService {
      */
     @Override
     public List<Account> queryAllByLimit(int offset, int limit) {
-        return this.accountDao.queryAllByLimit(offset, limit);
+        return null;
     }
 
     /**
@@ -62,7 +62,7 @@ public class AccountServiceImpl implements AccountService {
      */
     @Override
     public Account update(Account account) {
-        this.accountDao.update(account);
+        this.accountDao.update(account,null);
         return this.queryById(account.getId());
     }
 
