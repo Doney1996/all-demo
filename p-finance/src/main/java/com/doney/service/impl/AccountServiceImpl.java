@@ -1,5 +1,7 @@
 package com.doney.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.doney.entity.Account;
 import com.doney.dao.AccountDao;
 import com.doney.service.AccountService;
@@ -75,5 +77,12 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public boolean deleteById(Long id) {
         return this.accountDao.deleteById(id) > 0;
+    }
+
+    @Override
+    public List<Account> queryAll() {
+        QueryWrapper<Account> wrapper = new QueryWrapper<Account>();
+        wrapper.ne("account_type","6");
+        return accountDao.selectList(wrapper);
     }
 }

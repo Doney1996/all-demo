@@ -52,4 +52,8 @@ public interface AccountService {
      */
     boolean deleteById(Long id);
 
+    /**
+     * 查询所有可见账号
+     */
+    List<Account> queryAll();
 }

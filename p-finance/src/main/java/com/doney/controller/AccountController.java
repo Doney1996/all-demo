@@ -5,6 +5,7 @@ import com.doney.service.AccountService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * (Account)表控制层
@@ -30,6 +31,14 @@ public class AccountController {
     @GetMapping("selectOne")
     public Account selectOne(Long id) {
         return this.accountService.queryById(id);
+    }
+
+    /**
+     * 查询所有账号
+     */
+    @GetMapping("getAll")
+    public List<Account> getAll() {
+        return this.accountService.queryAll();
     }
 
 }
