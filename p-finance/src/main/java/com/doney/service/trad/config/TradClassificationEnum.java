@@ -20,7 +20,7 @@ public enum TradClassificationEnum {
     private final String description;
 
     /**
-     * 数据访问器
+     * 处理器
      */
     private final Class<? extends TradHandler> handlerClass;
 

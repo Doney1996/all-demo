@@ -1,6 +1,7 @@
 package com.doney.advanced.thread.lock;
 
 
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -59,6 +60,7 @@ public class SynchronizedTest {
 }
 
 @Slf4j
+@Data
 class A{
     private static boolean flag = false;
     private static ArrayList<CallBack> cacheList = new ArrayList<>();
