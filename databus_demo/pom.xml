@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>all-demo</artifactId>
+        <groupId>org.example</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>databus_demo</artifactId>
+
+    <dependencies>
+        <!-- sub projects -->
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-input-drc</artifactId>
+            <version>1.0.0.20180105</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-common-manage-facade</artifactId>
+            <version>1.0.0.20171128</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-common-service-facade</artifactId>
+            <version>1.0.0.20170425</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-common-transform</artifactId>
+            <version>1.0.0.20180105</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-common-dal</artifactId>
+            <version>1.0.0.20170926</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-common-flooddata</artifactId>
+            <version>1.0.0.20171128</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-core-api</artifactId>
+            <version>1.0.0.20171214</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-core-platform</artifactId>
+            <version>1.0.0.20180105</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-core-nodes</artifactId>
+            <version>1.0.0.20180105</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-core-mergenode</artifactId>
+            <version>1.0.0.20171010</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-core-monitor</artifactId>
+            <version>1.0.0.20180105</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-output-metaq</artifactId>
+            <version>1.0.0.20170411</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-output-antq</artifactId>
+            <version>1.0.0.20170718</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-output-msgbroker</artifactId>
+            <version>1.0.0.20170214</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-output-store</artifactId>
+            <version>1.0.0.20180105</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-input-msgbroker</artifactId>
+            <version>1.0.0.20180105</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-core-service</artifactId>
+            <version>1.0.0.20180105</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-common-util</artifactId>
+            <version>1.0.0.20171128</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-core-datastore</artifactId>
+            <version>1.0.0.20170912</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>hadoop-core</artifactId>
+                    <groupId>org.apache.hadoop</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>hbase</artifactId>
+                    <groupId>org.apache.hbase</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>ots-internal</artifactId>
+                    <groupId>com.aliyun.openservices</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-common-datastore</artifactId>
+            <version>1.0.0.20180105</version>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-input-taobaoapi</artifactId>
+            <version>1.0.0.20170926</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-common-lineage-agent</artifactId>
+            <version>1.0.0.20170815</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alipay.rdpcommon</groupId>
+            <artifactId>rdpcommon-databus-common-lineage-facade</artifactId>
+            <version>1.0.0.20170314</version>
+        </dependency>
+
+
+    </dependencies>
+
+</project>

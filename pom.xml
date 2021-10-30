@@ -18,6 +18,7 @@
         <module>sofa-rpc-demo</module>
         <module>p-finance</module>
         <module>doney-rpc</module>
+        <module>databus_demo</module>
     </modules>
 
     <groupId>org.example</groupId>
