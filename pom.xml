@@ -18,7 +18,8 @@
         <module>sofa-rpc-demo</module>
         <module>p-finance</module>
         <module>doney-rpc</module>
-        <module>databus_demo</module>
+<!--        <module>databus_demo</module>-->
+        <module>rocketmq</module>
     </modules>
 
     <groupId>org.example</groupId>
@@ -29,7 +30,7 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.1.10.Final</version>
+            <version>4.1.65.Final</version>
         </dependency>
     </dependencies>
 
