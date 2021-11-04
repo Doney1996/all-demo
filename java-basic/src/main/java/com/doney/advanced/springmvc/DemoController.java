@@ -1,4 +1,4 @@
-package com.doney.advanced.spring;
+package com.doney.advanced.springmvc;
 
 import com.doney.advanced.exception.AppException;
 import org.springframework.beans.BeansException;
@@ -7,7 +7,6 @@ import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.mock.web.MockHttpSession;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,11 +20,8 @@ import java.util.Objects;
 @RequestMapping("/test")
 public class DemoController implements ApplicationContextAware {
 
-    private ApplicationContext applicationContext;
-
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.applicationContext = applicationContext;
 
 
         DefaultListableBeanFactory defaultListableBeanFactory = (DefaultListableBeanFactory) ((ConfigurableApplicationContext) applicationContext).getBeanFactory();
@@ -48,9 +44,8 @@ public class DemoController implements ApplicationContextAware {
 
     @GetMapping("g1")
     public String g1(HttpServletRequest request) {
-
-        MockHttpSession good = (MockHttpSession) request.getSession();
-        Object user = good.getAttribute("user");
+        HttpSession session = request.getSession();
+        Object user = session.getAttribute("user");
         if (Objects.isNull(user) || StringUtils.isEmpty(user))
             throw new IllegalArgumentException("没有登录");
         return "hello world";

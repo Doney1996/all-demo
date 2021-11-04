@@ -20,8 +20,9 @@ import javax.sql.DataSource;
 import java.util.Objects;
 
 @Configuration
-public class DataSourceConfig{
+public class DataSourceConfig {
 
+    // 主数据源不用声明
 //    @Bean("primaryDatasource")
 //    @ConfigurationProperties(prefix = "spring.datasource")
 //    @Primary
@@ -32,7 +33,6 @@ public class DataSourceConfig{
     public DataSource secondDataSource() {
         return DataSourceBuilder.create().build();
     }
-
 
 
 }
@@ -50,7 +50,7 @@ public class DataSourceConfig{
 class PrimaryDataSourceConfig {
     //第一个数据源，可以不加Qualifier
     @Autowired
-    private  DataSource dataSource;
+    private DataSource dataSource;
 
     //jpa其他参数配置
     private final JpaProperties jpaProperties;
@@ -67,6 +67,7 @@ class PrimaryDataSourceConfig {
 
     /**
      * 配置第一个实体管理工厂的bean
+     *
      * @return /
      */
     @Bean(name = "firstEntityManagerFactoryBean")
@@ -83,6 +84,7 @@ class PrimaryDataSourceConfig {
 
     /**
      * EntityManager不过解释，用过jpa的应该都了解
+     *
      * @return /
      */
     @Bean(name = "firstEntityManager")
@@ -93,6 +95,7 @@ class PrimaryDataSourceConfig {
 
     /**
      * jpa事务管理
+     *
      * @return /
      */
     @Bean(name = "firstTransactionManager")
@@ -134,6 +137,7 @@ class SecondDataSourceConfig {
 
     /**
      * 配置第一个实体管理工厂的bean
+     *
      * @return /
      */
     @Bean(name = "secondEntityManagerFactoryBean")
@@ -149,6 +153,7 @@ class SecondDataSourceConfig {
 
     /**
      * EntityManager不过解释，用过jpa的应该都了解
+     *
      * @return /
      */
     @Bean(name = "secondEntityManager")
@@ -158,6 +163,7 @@ class SecondDataSourceConfig {
 
     /**
      * jpa事务管理
+     *
      * @return /
      */
     @Bean(name = "secondTransactionManager")

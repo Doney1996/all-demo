@@ -1,4 +1,4 @@
-package com.doney.advanced.spring;
+package com.doney.advanced.springmvc;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

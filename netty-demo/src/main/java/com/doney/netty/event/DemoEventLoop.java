@@ -1,8 +1,6 @@
 package com.doney.netty.event;
 
-import io.netty.channel.EventLoop;
 import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.util.concurrent.Future;
 
 import java.util.concurrent.ExecutionException;
 

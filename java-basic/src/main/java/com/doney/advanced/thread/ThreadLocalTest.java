@@ -1,11 +1,12 @@
 package com.doney.advanced.thread;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
+/**
+ * 测试 ThreadLocal可以是多个
+ */
 public class ThreadLocalTest {
 
     public static ThreadLocal<Object> tl1 = new ThreadLocal<>();
