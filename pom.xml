@@ -20,6 +20,7 @@
         <module>doney-rpc</module>
 <!--        <module>databus_demo</module>-->
         <module>rocketmq</module>
+        <module>jpa</module>
     </modules>
 
     <groupId>org.example</groupId>
