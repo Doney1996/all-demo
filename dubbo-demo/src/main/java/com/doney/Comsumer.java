@@ -20,4 +20,14 @@ public class Comsumer {
         String message = service.sayHi("dubbo");
         System.out.println(message);
     }
+    public String getAppName(){
+        return "name";
+    }
+    public String getAppName201(){
+        return "name";
+    }
+    public String getAppName2(){
+        return "name";
+    }
+
 }
