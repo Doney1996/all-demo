@@ -4,12 +4,7 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import io.netty.handler.codec.http.DefaultFullHttpResponse;
-import io.netty.handler.codec.http.FullHttpRequest;
-import io.netty.handler.codec.http.FullHttpResponse;
-import io.netty.handler.codec.http.HttpHeaderNames;
-import io.netty.handler.codec.http.HttpResponseStatus;
-import io.netty.handler.codec.http.HttpVersion;
+import io.netty.handler.codec.http.*;
 import io.netty.util.CharsetUtil;
 
 import java.util.HashMap;
@@ -21,11 +16,11 @@ public class HttpRequestHandler extends SimpleChannelInboundHandler<FullHttpRequ
 
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) {
-            ctx.flush();
+        ctx.flush();
     }
 
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest req) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest req) {
         //100 Continue
         if (is100ContinueExpected(req)) {
             ctx.write(new DefaultFullHttpResponse(
