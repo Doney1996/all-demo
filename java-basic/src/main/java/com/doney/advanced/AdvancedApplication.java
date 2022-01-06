@@ -5,6 +5,7 @@ import com.alicp.jetcache.anno.config.EnableMethodCache;
 import org.apache.commons.logging.LogFactory;
 import org.slf4j.ILoggerFactory;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -29,5 +30,8 @@ public class AdvancedApplication {
 		ILoggerFactory factory = LoggerFactory.getILoggerFactory();
 		SpringApplication.run(AdvancedApplication.class, args);
 	}
+
+	@Value("${aaaa.x}")
+	private String aa;
 
 }
