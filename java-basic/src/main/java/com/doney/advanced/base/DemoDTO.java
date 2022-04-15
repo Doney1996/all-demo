@@ -1,9 +1,9 @@
 package com.doney.advanced.base;
 
-public class PP {
+public class DemoDTO {
     private String id;
 
-    public PP(String id) {
+    public DemoDTO(String id) {
         this.id = id;
     }
 

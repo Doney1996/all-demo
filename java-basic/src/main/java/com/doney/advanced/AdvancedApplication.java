@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableMethodCache(basePackages = "com.doney")
+@EnableMethodCache(basePackages = "com.doney") // 开启缓存
 @EnableCreateCacheAnnotation
 public class AdvancedApplication {
 

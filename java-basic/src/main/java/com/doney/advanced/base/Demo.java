@@ -14,10 +14,10 @@ public class Demo {
      * 改变对象private私有字段的值
      */
     private static void changPrivateField() throws NoSuchFieldException, IllegalAccessException {
-        PP pp = new PP("123");
-        Field id = pp.getClass().getDeclaredField("id");
+        DemoDTO demoDTO = new DemoDTO("123");
+        Field id = demoDTO.getClass().getDeclaredField("id");
         id.setAccessible(true);
-        id.set(pp,"asd");
-        System.out.println(pp.getId());
+        id.set(demoDTO,"asd");
+        System.out.println(demoDTO.getId());
     }
 }

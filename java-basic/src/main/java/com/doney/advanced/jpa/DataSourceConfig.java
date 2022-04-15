@@ -19,6 +19,9 @@ import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 import java.util.Objects;
 
+/**
+ * 使用Jpa 配置连个数据源
+ */
 @Configuration
 public class DataSourceConfig{
 
